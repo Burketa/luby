@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Luby</string>
+    <string name="hint_user_name">Digite seu nome</string>
+    <string name="hint_user_phone">Digite seu telefone</string>
+    <string name="hint_user_email">Digite seu e-mail</string>
+    <string name="hint_user_password">Digite sua senha</string>
+    <string name="login">Logar</string>
+    <string name="sign_up">Cadastrar</string>
+    <string name="no_account">Não tem conta ? Cadastre-se</string>
+    <string name="image_description_lock">Imagem de cadeado fechado</string>
+    <string name="image_description_smile">Umagem de um rostinho feliz</string>
+</resources>
