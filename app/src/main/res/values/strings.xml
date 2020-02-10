@@ -14,4 +14,9 @@
     <string name="image_description_lock_unlocked">Imagem de cadeado aberto</string>
     <string name="image_description_smile">Imagem de um rostinho feliz</string>
     <string name="invalid_input">Campo inválido</string>
+    <string name="user_registered">Usuario cadastrado</string>
+    <string name="user_invalid">Usuario inválido</string>
+    <string name="password_invalid">Senha inválida:</string>
+    <string name="welcome">Bem vindx</string>
+    <string name="user_unknown">Status: 422 Usuario não reconhecido</string>
 </resources>

@@ -11,6 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.burca.lubyapp.R;
 import com.burca.lubyapp.activity.MainActivity;
 import com.burca.lubyapp.model.Token;
 import com.burca.lubyapp.model.User;
@@ -94,7 +95,7 @@ public class LoginService {
     }
     private void showError()
     {
-        Toast.makeText(context, "Status: 422\nUsuario não reconhecido", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getResources().getString(R.string.user_unknown), Toast.LENGTH_SHORT).show();
     }
 
 }

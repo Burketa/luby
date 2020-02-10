@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SIGN_UP_CODE) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Usuario cadastrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.user_registered, Toast.LENGTH_SHORT).show();
                 inputEmail.getEditText().setText(data.getExtras().getString(EMAIL_KEY, ""));
             }
         }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("userJSON -> " + userJson);
 
         if (userJson.equals("")) {
-            Toast.makeText(this, "Usuario inválido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.user_invalid, Toast.LENGTH_SHORT).show();
         } else {
             Gson gson = new Gson();
             User user = gson.fromJson(userJson, User.class);
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             if (inputPassword.getEditText().getText().toString().equals(user.getPassword())) {
                 getToken(user);
             } else {
-                Toast.makeText(this, "Senha inválida: " + user.getPassword(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.password_invalid + user.getPassword(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     public void showToken(User user)
     {
         changeLockImage();
-        Toast.makeText(this, "Bem vindx\n" + user.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.welcome + user.getName(), Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String tokenJSON = sharedPref.getString(Token.TOKEN_TAG, "");

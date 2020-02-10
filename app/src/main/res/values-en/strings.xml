@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Luby</string>
+    <string name="hint_user_birthday">Birthday</string>
+    <string name="hint_user_email">Email</string>
+    <string name="hint_user_email_login">Email</string>
+    <string name="hint_user_name">Name</string>
+    <string name="hint_user_password">Password</string>
+    <string name="hint_user_password_login">Password</string>
+    <string name="hint_user_phone">Phone</string>
+    <string name="image_description_lock_locked">Locked lock image</string>
+    <string name="image_description_lock_unlocked">Unlocked lock image</string>
+    <string name="image_description_smile">Smile image</string>
+    <string name="invalid_input">Invalid field</string>
+    <string name="login">Login</string>
+    <string name="no_account">Don\'t have an account ? Sign Up</string>
+    <string name="password_invalid">"Invalid password: "</string>
+    <string name="sign_up">Register</string>
+    <string name="user_invalid">Invalid user</string>
+    <string name="user_registered">User registered</string>
+    <string name="welcome">Welcome</string>
+    <string name="user_unknown">Status: 422 User unknown</string>
+</resources>
