@@ -88,6 +88,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 //System.out.println("M -> " + calendar.get(Calendar.MONTH));
                 //System.out.println("Y -> " + calendar.get(Calendar.YEAR));
                 updateBirthdayText();
+                birthdayValidation.clear();
             }
 
         };
@@ -129,11 +130,11 @@ public class RegistrationActivity extends AppCompatActivity {
     public User createUser() {
         User newUser = new User();
 
-        newUser.name = inputName.getEditText().getText().toString();
-        newUser.phone = inputPhone.getEditText().getText().toString();
-        newUser.email = inputEmail.getEditText().getText().toString();
-        newUser.password = inputPassword.getEditText().getText().toString();
-        newUser.birthday = inputBirthday.getEditText().getText().toString();
+        newUser.setName(inputName.getEditText().getText().toString());
+        newUser.setPhone(inputPhone.getEditText().getText().toString());
+        newUser.setBirthday(inputBirthday.getEditText().getText().toString());
+        newUser.setEmail(inputEmail.getEditText().getText().toString());
+        newUser.setPassword(inputPassword.getEditText().getText().toString());
 
         return newUser;
     }
@@ -145,11 +146,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(user.email, userJson);
+        editor.putString(user.getEmail(), userJson);
         editor.commit();
 
         Intent intent = new Intent();
-        intent.putExtra(MainActivity.EMAIL_KEY, user.email);
+        intent.putExtra(MainActivity.EMAIL_KEY, user.getEmail());
         setResult(RESULT_OK, intent);
         finish();
     }

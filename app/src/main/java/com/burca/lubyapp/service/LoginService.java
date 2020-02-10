@@ -3,6 +3,7 @@ package com.burca.lubyapp.service;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,8 +35,8 @@ public class LoginService {
     public Token getToken(User user, Context context) {
         Map<String, String> params = new HashMap<>();
 
-        params.put("email", "teste@luby.com.br"); //user.email
-        params.put("password", "123456");   //user.password
+        params.put("email", user.getEmail());
+        params.put("password", user.getPassword());
 
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = "http://teste.luby.com.br/api/token";
@@ -55,6 +56,7 @@ public class LoginService {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         System.out.println("Error -> " + error);
+                        showError();
                     }
                 });
 
@@ -81,7 +83,7 @@ public class LoginService {
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("token", token.toString());
+        editor.putString(Token.TOKEN_TAG, token.toString());
         editor.commit();
 
         try {
@@ -90,4 +92,9 @@ public class LoginService {
             e.printStackTrace();
         }
     }
+    private void showError()
+    {
+        Toast.makeText(context, "Status: 422\nUsuario não reconhecido", Toast.LENGTH_SHORT).show();
+    }
+
 }

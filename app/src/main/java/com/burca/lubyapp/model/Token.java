@@ -3,6 +3,8 @@ package com.burca.lubyapp.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Token {
+    public static final String TOKEN_TAG = "token";
+
     @SerializedName("access_token")
     private String token;
     @SerializedName("expires_in")
